@@ -1,0 +1,86 @@
+//@tailwind base;
+//@tailwind components;
+//@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+        url(https://s1.lolis.fyi/font/Mona-Sans.ttf);
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+#app {
+    font-family: "Mona Sans", "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+
+
+
+::selection {
+  background-color: rgba(249, 208, 196, 0.5);
+}
+
+.tooltip .tooltip-top,
+.tooltip .tooltip-left {
+    font-size: 0.9rem;
+    visibility: hidden;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+.tooltip .tooltip-top {
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.tooltip .tooltip-left {
+    top: 50%;
+    left: -50%; /* 调整为负数，使提示框在元素的左侧 */
+    transform: translate(-100%, -50%);
+    white-space: nowrap;
+}
+.tooltip .tooltip-top::before,
+.tooltip .tooltip-bottom::before,
+.tooltip .tooltip-left::before  {
+    content: "";
+    position: absolute;
+    border-width: 6px;
+    border-style: solid;
+}
+.tooltip .tooltip-top::before {
+    top: 100%;
+    left: 50%;
+    border-color: #000 transparent transparent transparent;
+    transform: translateX(-50%);
+}
+.tooltip .tooltip-bottom::before {
+    bottom: 100%;
+    left: 50%;
+    border-color: transparent transparent #000 transparent;
+    transform: translateX(-50%);
+}
+.tooltip .tooltip-left::before {
+    top: 50%;
+    left: 100%; /* 将 left 修改为 right */
+    border-color: transparent #000 transparent transparent; /* 调整边框颜色顺序 */
+    transform: translateY(-50%) rotate(180deg); /* 将 translateX 修改为 translateY，并添加 rotate(180deg) */
+}
+.tooltip:hover .tooltip-top,
+.tooltip:hover .tooltip-left {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
