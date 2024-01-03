@@ -25,7 +25,7 @@ const BlogClass = ref(false);
 <!--      <if-comp title="哔哩哔哩~亁杯 - AoMiura" href="//player.bilibili.com/player.html?aid=916041751&bvid=BV1Eu4y1r7P1&cid=1268587236&p=1" icon="bi-twitter"><i class="bi i bih bi-twitter"></i></if-comp>-->
     </li>
     <li>
-      <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1721829425&website=miura.yoru.cc" target="_blank"><i class="bi i bih bi-tencent-qq"></i></a>
+      <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1721829425&website=miura.yoru.cc"><i class="bi i bih bi-tencent-qq"></i></a>
     </li>
     <li>
       <a href="mailto:miura738@1oli.cn"><i class="bi i bih bi-envelope-heart"></i></a>
