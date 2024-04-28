@@ -16,7 +16,7 @@ function Jump() {
   window.open(`https://www.bilibili.com/video/${targetBVid}`, '_blank');
 }
 const OpenWindow = () => {
-  WindowOpen.value = true;
+  WindowOpen.value = !WindowOpen.value;
 }
 const CloseWindow = () => {
   WindowOpen.value = false;
@@ -24,7 +24,7 @@ const CloseWindow = () => {
 
 
 import { ref, reactive } from 'vue';
-import axios from "axios";
+// import axios from "axios";
 
 const draggable = ref(null);
 const position = reactive({ x: window.innerWidth / 2 -240, y: window.innerHeight / 2 -192, index: 55});
@@ -61,7 +61,9 @@ document.addEventListener('mousedown', () => {
   }
 });
 
-
+document.addEventListener('mousemove', drag)
+document.addEventListener('mouseup',stopDrag)
+document.addEventListener('mouseleave',stopDrag)
 
 const ApiData = ref({
   "title": "null",
@@ -84,7 +86,7 @@ const ApiData = ref({
     ref="draggable"
     :style="{ top: position.y + 'px', left: position.x + 'px', zIndex: position.index }"
     class="fixed sm:w-[33rem] w-[30rem] h-96 bg-white left-0 border border-[#e58c98] select-none text-black">
-    <div @mousedown="startDrag" @mousemove="drag" @mouseup="stopDrag" @mouseleave="stopDrag"
+    <div @mousedown="startDrag" @mousemove="drag" @mouseup="stopDrag"
         class=" w-full h-7 top-0 bg-pink-100 cursor-move bg-opacity-25 flex items-center justify-between pt-1 px-3">
       <div class="flex items-center scale-90 tooltip relative">
         <div>

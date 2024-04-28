@@ -2,8 +2,8 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import IfComp from "@/components/window/IfComp.vue";
-import BiliComp from "@/components/window/BiliComp.vue";
-import RssComp from "@/components/RssComp.vue";
+// import BiliComp from "@/components/window/BiliComp.vue";
+// import RssComp from "@/components/RssComp.vue";
 
 const BlogClass = ref(false);
 </script>
@@ -17,16 +17,14 @@ const BlogClass = ref(false);
   </button>
   <router-view />
   <div class="social">
-      <bili-comp bvid="BV1UF41167QX"><i class="bi i bih bi-twitter"></i></bili-comp>
-
-<!--      <if-comp title="Twitter" href="https://blog.mes.rip/cv1" icon="bi-twitter"><i class="bi bih bi-twitter"></i></if-comp>-->
-<!--      <if-comp title="Twitter" href="https://x.com/@realMiura738" icon="bi-twitter"><i class="bi bih bi-twitter"></i></if-comp>-->
+<!--      <bili-comp bvid="BV1UF41167QX"><i class="bi i bih bi-twitter"></i></bili-comp>-->
       <if-comp title="哔哩哔哩~亁杯 - AoMiura" href="https://space.bilibili.com/671460231">
         <svg class="i bih" style="margin-top: .2rem" viewBox="0 0 1024 1024" width="22" height="22" fill="currentColor"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" p-id="1650"></path></svg>
       </if-comp>
       <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1721829425&website=miura.yoru.cc"><i class="bi i bih bi-tencent-qq"></i></a>
       <a href="mailto:miura738@126.com"><i class="bi i bih bi-envelope-heart"></i></a>
       <if-comp title="Github" href="https://github.com/Miura738" icon="bi-github"><i class="bi i bih bi-github"></i></if-comp>
+      <if-comp title="Index" href="https://index.mes.rip" icon="bi-browser-chrome"><i class="bi i bih bi-share"></i></if-comp>
   </div>
   <div class="more">
 <!--    <RssComp />-->

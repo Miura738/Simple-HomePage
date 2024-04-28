@@ -9,6 +9,7 @@ const props = defineProps({
   icon: String,
 });
 
+// eslint-disable-next-line vue/no-setup-props-destructure
 const targetHref = props.href;
 const WindowOpen = ref(false);
 
@@ -17,7 +18,7 @@ function Jump() {
 }
 const OpenWindow = () => {
   // window.open(targetHref, '_blank', 'width=400,height=300');
-  WindowOpen.value = true;
+  WindowOpen.value = !WindowOpen.value;
 }
 const CloseWindow = () => {
   WindowOpen.value = false;
@@ -54,6 +55,9 @@ const stopDrag = () => {
 
   isDragging.value = false;
 };
+document.addEventListener('mousemove', drag)
+document.addEventListener('mouseup',stopDrag)
+document.addEventListener('mouseleave',stopDrag)
 
 document.addEventListener('mousedown', () => {
   if (!isDragging.value) {
@@ -69,7 +73,7 @@ document.addEventListener('mousedown', () => {
     ref="draggable"
     :style="{ top: position.y + 'px', left: position.x + 'px', zIndex: position.index }"
     class="fixed sm:w-[40rem] sm:h-[30rem] w-[30rem] h-96 bg-white left-0 border border-[#e58c98] select-none text-white">
-    <div @mousedown="startDrag" @mousemove="drag" @mouseup="stopDrag" @mouseleave="stopDrag"
+    <div @mousedown="startDrag" @mousemove="drag" @mouseup="stopDrag"
         class="absolute w-full h-7 top-0 bg-pink-100 cursor-move bg-opacity-25 flex items-center justify-between pt-1 px-3">
       <div class="flex items-center scale-90">
         <div><i class="bi text-white fill-white" :class="props.icon"></i></div>
